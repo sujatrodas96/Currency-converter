@@ -1,0 +1,175 @@
+ body.dark {
+            --background-color: #121212;
+            --text-color: white;
+            --button-color: #bb86fc;
+            --button-text-color: black;
+            --converter-background: #333;
+        }
+
+        :root {
+            --background-color: #f0f4f8; /* Soft background color */
+            --text-color: #333; /* Darker text color */
+            --button-color: #007bff; /* Attractive blue button */
+            --button-text-color: white; /* White button text */
+            --converter-background: #ffffff; /* White background for the converter */
+            --converter-shadow: rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            --font-family: 'Poppins', sans-serif; /* Modern font */
+        }
+
+        body {
+            font-family: var(--font-family);
+            text-align: center;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #converter {
+            display: inline-block;
+            padding: 20px;
+            max-width: 400px; /* Maximum width for desktop */
+            width: 100%; /* Full width on smaller screens */
+            background-color: var(--converter-background);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px var(--converter-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin: auto; /* Center the converter */
+        }
+
+        input, select, button {
+            padding: 12px;
+            margin: 12px 0; /* Top and bottom margin only */
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-family);
+        }
+
+        input, select {
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            width: 100%; /* Full width for button */
+            background-color: var(--button-color);
+            color: var(--button-text-color);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Elevation on hover */
+        }
+
+        h1 {
+            font-size: 28px; /* Smaller size for better mobile display */
+            margin-bottom: 15px;
+            font-family: var(--font-family);
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 20px; /* Smaller size for better mobile display */
+        }
+
+        /* Switch Styles */
+        .switch-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .switch-label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            #converter {
+                padding: 15px; /* Slightly reduce padding on smaller screens */
+            }
+
+            h1 {
+                font-size: 26px; /* Adjust title size for smaller screens */
+            }
+
+            h2 {
+                font-size: 18px; /* Adjust result size for smaller screens */
+            }
+
+            input, select, button {
+                padding: 10px; /* Reduce padding for smaller screens */
+                font-size: 14px; /* Smaller font size for input elements */
+            }
+        }
+
+        @media (max-width: 480px) {
+            #converter {
+                padding: 10px; /* Further reduce padding for mobile */
+            }
+
+            h1 {
+                font-size: 24px; /* Further adjust title size for mobile */
+            }
+
+            h2 {
+                font-size: 16px; /* Further adjust result size for mobile */
+            }
+
+            input, select, button {
+                padding: 8px; /* Further reduce padding */
+                font-size: 12px; /* Further reduce font size */
+            }
+        }

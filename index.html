@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="converter">
+        <div class="switch-container">
+            <span class="switch-label">Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="modeSwitch" onchange="switchMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <h1>Currency Converter</h1>
+        <input type="number" id="amount" placeholder="Amount" />
+        <select id="fromCurrency"></select>
+        <select id="toCurrency"></select>
+        <button onclick="convertCurrency()">Convert</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script src="converter.js"></script>
+    <script>
+        function switchMode() {
+            const isChecked = document.getElementById('modeSwitch').checked;
+            if (isChecked) {
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+            }
+        }
+
+        window.onload = populateCurrencies;
+    </script>
+</body>
+</html>
